@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.mytest.getOrAwaitValue
+import com.example.mytest.getOrAwaitValueAndroid
 import com.google.common.truth.Truth.assertThat
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -41,7 +41,7 @@ class MyDatabaseTest{
         // you must pass id for testing room database
         val entity = MyEntity("ali" ,"1234" ,1)
         dao.insertEntity(entity)
-        val result = dao.getAllEntity().getOrAwaitValue()
+        val result = dao.getAllEntity().getOrAwaitValueAndroid()
         assertThat(result).contains(entity)
     }
 
@@ -51,7 +51,7 @@ class MyDatabaseTest{
         val entity = MyEntity("ali" ,"1234" ,2)
         dao.insertEntity(entity)
         dao.deleteEntity(entity)
-        val result = dao.getAllEntity().getOrAwaitValue()
+        val result = dao.getAllEntity().getOrAwaitValueAndroid()
         assertThat(result).doesNotContain(entity)
     }
 
