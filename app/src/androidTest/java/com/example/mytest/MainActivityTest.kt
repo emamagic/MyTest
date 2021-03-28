@@ -2,6 +2,7 @@ package com.example.mytest
 
 import androidx.test.core.app.ActivityScenario
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
@@ -23,7 +24,8 @@ class MainActivityTest{
 
     @Test
     fun testTextView_MainActivity(){
-        onView(withId(R.id.txt_main)).check(matches(isDisplayed()))
+        onView(withId(R.id.txt_main)).perform(click())
+        onView(withId(R.id.my_fragment_root)).check(matches(isDisplayed()))
     }
 
 }
