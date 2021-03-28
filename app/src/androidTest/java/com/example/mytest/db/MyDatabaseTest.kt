@@ -6,27 +6,34 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.mytest.getOrAwaitValueAndroid
 import com.google.common.truth.Truth.assertThat
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import javax.inject.Inject
+import javax.inject.Named
 
-@RunWith(AndroidJUnit4::class)
+@HiltAndroidTest
 class MyDatabaseTest{
 
-    private lateinit var db: MyDatabase
+    @Inject
+    @Named("TEST_DB")
+    lateinit var db: MyDatabase
     private lateinit var dao: MyDao
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
+    @get:Rule
+    val hiltAndroidRule = HiltAndroidRule(this)
+
 
     @Before
     fun setUp(){
-        db = Room.inMemoryDatabaseBuilder(ApplicationProvider.getApplicationContext() ,MyDatabase::class.java)
-            .allowMainThreadQueries()
-            .build()
+        hiltAndroidRule.inject()
         dao = db.getDao()
     }
 
