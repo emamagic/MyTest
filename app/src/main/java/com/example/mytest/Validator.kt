@@ -14,6 +14,11 @@ object Validator {
      * it indicate that input is valid or not
      * */
     fun validateInput(name: String ,password: String): Boolean{
+        if(name.isNotEmpty() && password.isNotEmpty() && password.length > 3){
+            name.forEach { if (it.isDigit()) return false }
+            password.forEach { if (!it.isDigit()) return false }
+            return true
+        }
         return false
     }
 

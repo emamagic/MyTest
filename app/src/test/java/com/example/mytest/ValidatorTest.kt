@@ -42,7 +42,7 @@ class ValidatorTest{
     }
 
     @Test
-    fun `password is less thane 3 digit retutn false`(){
+    fun `password is less thane 3 digit return false`(){
         val name = "ali"
         val password = "12"
         val result = Validator.validateInput(name ,password)
