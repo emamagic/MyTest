@@ -45,15 +45,20 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.13.2'
+
+
+    androidTestImplementation 'junit:junit:4.13.2'
+    androidTestImplementation "com.google.truth:truth:1.1.2"
+    androidTestImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2'
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
 
-    androidTestImplementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.13.2'
     testImplementation "com.google.truth:truth:1.1.2"
-    androidTestImplementation "com.google.truth:truth:1.1.2"
-    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3'
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
 
     def room_version = "2.2.6"
     implementation "androidx.room:room-runtime:$room_version"
@@ -62,16 +67,9 @@ dependencies {
     implementation "androidx.room:room-ktx:$room_version"
 
 
-    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.3'
-    androidTestImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2'
-    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
-    testImplementation "androidx.arch.core:core-testing:2.1.0"
-
-
     def lifecycle_version = "2.3.1"
-    // ViewModel lifecycle
+    // Lifecycle
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    // LiveData lifecycle
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 
     // Retrofit
@@ -87,4 +85,24 @@ dependencies {
     def fragment_version = "1.3.2"
     implementation "androidx.fragment:fragment-ktx:$fragment_version"
     debugImplementation "androidx.fragment:fragment-testing:$fragment_version"
+
+    def activity_version = "1.2.2"
+    implementation "androidx.activity:activity-ktx:$activity_version"
+
+
+//    testImplementation "androidx.arch.core:core-testing:2.1.0"
+//    testImplementation "androidx.room:room-testing:2.2.6"
+//    testImplementation "junit:junit:4.13.2"
+//    testImplementation "com.google.truth:truth:1.1.2"
+//    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.4"
+//    testImplementation 'org.robolectric:robolectric:4.5.1'
+//
+//    androidTestImplementation "androidx.test.ext:junit-ktx:1.1.2"
+//    androidTestImplementation "androidx.test.espresso:espresso-core:3.3.0"
+//    androidTestImplementation "androidx.navigation:navigation-testing:2.3.3"
+//    androidTestImplementation "com.google.truth:truth:1.1.2"
+//    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+//    androidTestImplementation "androidx.test:rules:1.3.0"
+//    androidTestImplementation "androidx.test:runner:1.3.0"
+//    androidTestImplementation "androidx.test:core-ktx:1.3.0"
 }
