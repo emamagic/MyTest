@@ -4,10 +4,12 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.mytest.MainCoroutineRuleAndroid
 import com.example.mytest.getOrAwaitValueAndroid
 import com.google.common.truth.Truth.assertThat
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Before
@@ -17,6 +19,7 @@ import org.junit.runner.RunWith
 import javax.inject.Inject
 import javax.inject.Named
 
+@ExperimentalCoroutinesApi
 @HiltAndroidTest
 class MyDatabaseTest{
 
